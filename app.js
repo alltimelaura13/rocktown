@@ -1,0 +1,23 @@
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const flash = require('connect-flash');
+const methodOverride = require('method-override');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expressLayout = require('express-ejs-layouts');
+const passport = require('passport');
+const multer = require('multer');
+const upload = multer({dest: './public/uploads/'});
+const geolocation = require('geolocation');
+const cloudinary = require('cloudinary');
+
+const auth = require('./routes/auth.routes');
+const user = require('./routes/user.routes');
+const profile = require('./routes/profile.routes');
+const search = require('./routes/search.routes');
+const post = require('./routes/post.routes');
